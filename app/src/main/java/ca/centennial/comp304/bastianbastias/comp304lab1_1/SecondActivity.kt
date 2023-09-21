@@ -11,7 +11,8 @@ class SecondActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         val extras = intent.extras
-        val text = if (extras != null) extras.get(MainActivity.MSG_KEY) as String else ""
+        //val text = if (extras != null) extras.get(MainActivity.MSG_KEY) as String else ""
+        val text = if (extras != null) extras.getString(MainActivity.MSG_KEY, "") as String else ""
         setContentView(binding.root)
         binding.textView1.text = text
     }
